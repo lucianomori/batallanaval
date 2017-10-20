@@ -6,7 +6,7 @@ public class Jugador {
 	// TODO Auto-generated method stub
 	private int dificultad;
 	private int bombas;
-	private boolean barcoshundidos; // debería ser INT. Pero por ahora es BOOLEAN para probar
+	private int barcoshundidos =0; // debería ser INT. Pero por ahora es BOOLEAN para probar
 	private int[][] ataque = new int[2][2];
 	int X;
 	int Y;
@@ -14,7 +14,7 @@ public class Jugador {
 	public Jugador(){		
 	}
 
-	public Jugador(int dificultad, int bombas, boolean barcoshundidos) {
+	public Jugador(int dificultad, int bombas, int barcoshundidos) {
 		//super();
 		this.dificultad = dificultad;
 		this.bombas = bombas;
@@ -56,13 +56,14 @@ public class Jugador {
 		this.bombas = bombas;
 	}
 
-	public boolean getBarcoshundidos() {
+	public int getBarcoshundidos() {
 		//return barcoshundidos;
 		return barcoshundidos;
 	}
 
-	public void setBarcoshundidos(boolean barcoshundidos) {
-		this.barcoshundidos = barcoshundidos;
+	public void setBarcoshundidos(boolean hundido) {
+		if(hundido)
+			this.barcoshundidos += barcoshundidos;
 	}
 	
 	public boolean setAtaque(int x, int y) {

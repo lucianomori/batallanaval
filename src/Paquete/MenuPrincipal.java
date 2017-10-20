@@ -24,7 +24,7 @@ public class MenuPrincipal {
 	//Comienzan los turnos
 		do{ 
 			//Imprimir tablero
-			System.out.println("  1 2");
+			System.out.println("  1 2 3 4 5 6 7 8 9 10");
 			for (int x = 0; x < t.getTamaño(); x++) {
 				System.out.print((x + 1) + " ");
 				for (int y = 0; y < t.getTamaño(); y++) {
@@ -45,16 +45,21 @@ public class MenuPrincipal {
 			
 			if((j.getX()==b.getX())&&(j.getY()==b.getY())){
 				j.setBarcoshundidos(true);
-				System.out.println("GANASTE!");
+				System.out.println("¡GANASTE!");
+				java.awt.Toolkit.getDefaultToolkit().beep();
+				break;
 			}
 			j.restarBombas();
-			System.err.println("Te quedan "+j.getBombas()+" bombas");
-			//java.awt.Toolkit.getDefaultToolkit().beep(); //sonidito
+			if(j.getBombas()!=0){
+				System.err.print("\nTe quedan "+j.getBombas()+" bombas\n");
+	//java.awt.Toolkit.getDefaultToolkit().beep(); //sonidito
+			}
 			
-		}while(!j.getBarcoshundidos() && j.getBombas()!=0);
-		//}while(!j.getBarcoshundidos() || (j.getBombas()!=0));
-		
-		System.out.println("-GAME OVER-");
+		}while(j.getBarcoshundidos()!=1 && j.getBombas()!=0);
+		if(j.getBarcoshundidos()!=1 && j.getBombas()==0){
+			System.out.println("---------------GAME OVER-----------------");
+			java.awt.Toolkit.getDefaultToolkit().beep();
+		}
 	}
 
 }
