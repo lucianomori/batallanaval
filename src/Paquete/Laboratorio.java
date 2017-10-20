@@ -40,6 +40,9 @@ public class Laboratorio {
 				}
 				System.out.println();
 			}
+			
+			int i = 461012;
+			System.out.format("The value of i is: %d5%n", i);
 
 //			/**
 //			 * Create a random number that is greater than or equal to 0,

@@ -3,25 +3,28 @@ package Paquete;
 import java.util.Random;
 
 public class Barco {
-	private int tamañoBarco = 2;
-	private String[][] posicionBarco = new String[tamañoBarco][tamañoBarco];
+	Tablero t = new Tablero();	
+	private String[][] posicionBarco = new String[t.getTamaño()][t.getTamaño()];
 	Random random = new Random();
-	int randomInt1 = random.nextInt(2);
-	int randomInt2 = random.nextInt(2);
+	int posY = random.nextInt(10);
+	int posX = random.nextInt(10);
+	int tamañoBarco = 2;
 	int X;
 	int Y;
 	
 	public void Generar(){
 		for(int i=0; i<posicionBarco.length; i++){
 			for(int j=0; j<posicionBarco.length; j++){
-				posicionBarco[randomInt1][randomInt2]= "B";	
-				if(posicionBarco[1][0] == "B" || posicionBarco[0][1] == "B" || posicionBarco[1][1] == "B" ||posicionBarco[0][0] == "B"){					
-					setPosicionBarco(randomInt1, randomInt2);
-					break;	
-				}
-			}							
-		}	
-	}	
+				setPosicionBarco(posY, posX);
+				posicionBarco[posY][posX]= "B";	
+				break;
+			}
+		}
+	}
+//				if(posicionBarco[1][0] == "B" || posicionBarco[0][1] == "B" || posicionBarco[1][1] == "B" ||posicionBarco[0][0] == "B"){					
+//					setPosicionBarco(posY, posX);
+//					break;	
+//				}
 	
 	public void setPosicionBarco(int x, int y) {
 		this.posicionBarco[x][y] = posicionBarco[x][y];

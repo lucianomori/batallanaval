@@ -24,8 +24,8 @@ public class MenuPrincipal {
 	//Comienzan los turnos
 		do{ 
 			//Imprimir tablero
-			System.out.println("  1 2 3 4 5 6 7 8 9 10");
-			for (int x = 0; x < t.getTamaño(); x++) {
+			System.out.println("   1 2 3 4 5 6 7 8 9 10");
+			for (int x = 0; x < t.getTamaño(); x++) {				
 				System.out.print((x + 1) + " ");
 				for (int y = 0; y < t.getTamaño(); y++) {
 					if(b.getPosicionBarco(x, y)=="B"){

@@ -5,7 +5,7 @@ public class Tablero {
 	//public static void main(String[] args) { //No es MAIN ************************
 		// TODO Auto-generated method stub
 
-		private int tamaño = 2;
+		private int tamaño = 10;
 		private String[][] cuadricula = new String[tamaño][tamaño];
 		
 		public void Inicializar(){
